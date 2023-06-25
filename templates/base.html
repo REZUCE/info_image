@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap Link -->
+        <link href="{% static  'css/bootstrap.css' %}" rel="stylesheet">
+        <!-- Bootstrap Link -->
+
+        <title>{% block title %}Базовый title{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+
+<main>
+    {% block content %}
+        Контент не подвезли :(
+    {% endblock %}
+</main>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Картинка{% endblock %}
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 p-5">
+                    <div class="card">
+                        <div class="card-header">
+                            Загрузка
+                        </div>
+                        <div class="card-body">
+                            <input type="file" name="image" id="id_image">
+                            <button class="btn btn-primary" type="submit">Загрузить</button>
+                        </div> <!-- card body -->
+                    </div> <!-- card -->
+                </div> <!-- col -->
+            </div>
+        </div>
+    </form>
+
+    {% if width %}
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 p-5">
+                    <div class="card">
+                        <div class="card-header">
+                            Информация о картинке
+                        </div>
+                        <div class="card-body">
+                            <p>Ширина: {{ width }}</p>
+                            <p>Высота: {{ height }}</p>
+                        </div> <!-- card body -->
+                    </div> <!-- card -->
+                </div> <!-- col -->
+            </div> <!-- row -->
+        </div>
+    {% endif %}
+{% endblock %}
